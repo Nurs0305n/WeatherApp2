@@ -41,7 +41,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 @Composable
-fun MainCard(currentDay: MutableState<WeatherModel>, onClickSync: () -> Unit, onClickSearch: () -> Unit) {
+fun MainCard(currentDay: MutableState<WeatherModel>) {
     Column(
         modifier = Modifier.padding(5.dp),
     ) {
@@ -102,7 +102,6 @@ fun MainCard(currentDay: MutableState<WeatherModel>, onClickSync: () -> Unit, on
                 ) {
                     IconButton(
                         onClick = {
-                            onClickSearch.invoke()
                         }
                     ) {
                         Image(
@@ -122,7 +121,6 @@ fun MainCard(currentDay: MutableState<WeatherModel>, onClickSync: () -> Unit, on
                     )
                     IconButton(
                         onClick = {
-                            onClickSync.invoke()
                         }) {
                         Image(
                             painter = painterResource(id = R.drawable.ic_sync),

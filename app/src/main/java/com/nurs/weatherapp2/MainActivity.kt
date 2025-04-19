@@ -22,7 +22,6 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.nurs.weatherapp2.data.WeatherModel
-import com.nurs.weatherapp2.screens.DialogSearch
 import com.nurs.weatherapp2.screens.MainCard
 import com.nurs.weatherapp2.screens.TabLayout
 import com.nurs.weatherapp2.ui.theme.WeatherApp2Theme
@@ -36,12 +35,6 @@ class MainActivity : ComponentActivity() {
             WeatherApp2Theme {
                 val daysList = remember {
                     mutableStateOf(listOf<WeatherModel>())
-                }
-                val dialogState = remember {
-                    mutableStateOf(false)
-                }
-                if (dialogState.value){
-                    DialogSearch(dialogState)
                 }
                 val currentDay = remember {
                     mutableStateOf(
@@ -67,11 +60,7 @@ class MainActivity : ComponentActivity() {
                     contentScale = ContentScale.FillBounds
                 )
                 Column(modifier = Modifier.padding(top = 35.dp)) {
-                    MainCard(currentDay, onClickSync = {
-                        getData("Bishkek", this@MainActivity, daysList, currentDay)
-                    }, onClickSearch = {
-                        dialogState.value = true
-                    })
+                    MainCard(currentDay)
                     TabLayout(daysList, currentDay)
                 }
             }

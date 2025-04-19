@@ -89,37 +89,37 @@ fun MainList(list: List<WeatherModel>, currentDay: MutableState<WeatherModel>) {
     }
 }
 
-@Composable
-fun DialogSearch(dialogState: MutableState<Boolean>) {
-    AlertDialog(
-        title = {
-            Text(text = "Search")
-        },
-        text = {
-            Text(text = "City")
-        },
-        onDismissRequest = {
-            dialogState.value = true
-        },
-        confirmButton = {
-            TextButton(
-                onClick = {
-                    dialogState.value = false
-                }
-            ) {
-                Text("Confirm")
-            }
-        },
-        dismissButton = {
-            TextButton(
-                onClick = {
-                    dialogState.value = false
-                }
-            ) {
-                Text("Cancel")
-            }
-        }
-    )
+//@Composable
+//fun DialogSearch(dialogState: MutableState<Boolean>) {
+//    AlertDialog(
+//        title = {
+//            Text(text = "Search")
+//        },
+//        text = {
+//            Text(text = "City")
+//        },
+//        onDismissRequest = {
+//            dialogState.value = true
+//        },
+//        confirmButton = {
+//            TextButton(
+//                onClick = {
+//                    dialogState.value = false
+//                }
+//            ) {
+//                Text("Confirm")
+//            }
+//        },
+//        dismissButton = {
+//            TextButton(
+//                onClick = {
+//                    dialogState.value = false
+//                }
+//            ) {
+//                Text("Cancel")
+//            }
+//        }
+//    )
 //    AlertDialog(
 //        onDismissRequest = {
 //            dialogState.value = false
@@ -153,4 +153,4 @@ fun DialogSearch(dialogState: MutableState<Boolean>) {
 //        }
 //    )
 
-}
+//}
